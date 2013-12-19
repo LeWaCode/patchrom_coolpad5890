@@ -18,5 +18,5 @@ private-phone-apps := ApplicationsProvider \
 					  UserDictionaryProvider \
 					  VpnDialogs \
 					  CP_EngMode \
-					  CP_Email
+					  Email
 

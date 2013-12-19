@@ -168,3 +168,4 @@ name="XY_CP_IcmUserMgr.apk" certificate="build/target/product/security/platform.
 name="XY_CP_IcmWeather.apk" certificate="PRESIGNED" private_key=""
 name="XY_CP_IcmWeather-Widget-DCity.apk" certificate="build/target/product/security/platform.x509.pem" private_key="build/target/product/security/platform.pk8"
 name="OupengBrowser.apk" certificate="PRESIGNED" private_key=""
+name="Email.apk" certificate="build/target/product/security/testkey.x509.pem" private_key="build/target/product/security/testkey.pk8"
