@@ -161,7 +161,7 @@ name="TelephonyProvider.apk" certificate="build/target/product/security/platform
 name="ThemeChooser.apk" certificate="build/target/product/security/platform.x509.pem" private_key="build/target/product/security/platform.pk8"
 name="UsbUI.apk" certificate="build/target/product/security/platform.x509.pem" private_key="build/target/product/security/platform.pk8"
 name="UserDictionaryProvider.apk" certificate="build/target/product/security/shared.x509.pem" private_key="build/target/product/security/shared.pk8"
-name="VoiceAssistant.apk" certificate="PRESIGNED" private_key=""
+name="BaiduVoiceAssistant.apk" certificate="PRESIGNED" private_key=""
 name="VpnDialogs.apk" certificate="build/target/product/security/platform.x509.pem" private_key="build/target/product/security/platform.pk8"
 name="XY_CP_IcmUpgrade.apk" certificate="build/target/product/security/platform.x509.pem" private_key="build/target/product/security/platform.pk8"
 name="XY_CP_IcmUserMgr.apk" certificate="build/target/product/security/platform.x509.pem" private_key="build/target/product/security/platform.pk8"
