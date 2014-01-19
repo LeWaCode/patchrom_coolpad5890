@@ -3,6 +3,14 @@
 .source "Environment.java"
 
 
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Landroid/os/Environment$Injector;
+    }
+.end annotation
+
+
 # static fields
 .field private static final DATA_DIRECTORY:Ljava/io/File; = null
 
@@ -622,41 +630,19 @@
 .end method
 
 .method public static getExternalStorageDirectory()Ljava/io/File;
-    .locals 3
+    .locals 1
+    .annotation build Landroid/annotation/LewaHook;
+        value = .enum Landroid/annotation/LewaHook$LewaHookType;->CHANGE_CODE:Landroid/annotation/LewaHook$LewaHookType;
+    .end annotation
 
     .prologue
-    .line 199
-    const-string v0, "1"
+    sget-object v0, Landroid/os/Environment;->EXTERNAL_STORAGE_DIRECTORY:Ljava/io/File;
 
-    const-string/jumbo v1, "persist.sys.external.enabled"
-
-    const-string v2, "0"
-
-    invoke-static {v1, v2}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    .line 200
-    invoke-static {}, Landroid/os/Environment;->getExternalStorageDirectoryAsecInExternalSdcard()Ljava/io/File;
+    invoke-static {v0}, Landroid/os/Environment$Injector;->getExternalStorageDirectory(Ljava/io/File;)Ljava/io/File;
 
     move-result-object v0
 
-    .line 202
-    :goto_0
     return-object v0
-
-    :cond_0
-    invoke-static {}, Landroid/os/Environment;->getExternalStorageDirectoryAsecInInnerSdcard()Ljava/io/File;
-
-    move-result-object v0
-
-    goto :goto_0
 .end method
 
 .method private static getExternalStorageDirectoryAsecInExternalSdcard()Ljava/io/File;
@@ -1037,6 +1023,18 @@
     .prologue
     .line 109
     sget-object v0, Landroid/os/Environment;->MEDIA_STORAGE_DIRECTORY:Ljava/io/File;
+
+    return-object v0
+.end method
+
+.method public static getOriginalExternalStorageDirectory()Ljava/io/File;
+    .locals 1
+    .annotation build Landroid/annotation/LewaHook;
+        value = .enum Landroid/annotation/LewaHook$LewaHookType;->NEW_METHOD:Landroid/annotation/LewaHook$LewaHookType;
+    .end annotation
+
+    .prologue
+    sget-object v0, Landroid/os/Environment;->EXTERNAL_STORAGE_DIRECTORY:Ljava/io/File;
 
     return-object v0
 .end method
