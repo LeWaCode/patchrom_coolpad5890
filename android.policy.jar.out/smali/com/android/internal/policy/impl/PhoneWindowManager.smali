@@ -3893,10 +3893,10 @@
     throw v1
 .end method
 
-.method updateSystemUiVisibilityLw()I
+.method private updateSystemUiVisibilityLw()I
     .locals 6
     .annotation build Landroid/annotation/LewaHook;
-        value = .enum Landroid/annotation/LewaHook$LewaHookType;->CHANGE_CODE_AND_ACCESS:Landroid/annotation/LewaHook$LewaHookType;
+        value = .enum Landroid/annotation/LewaHook$LewaHookType;->CHANGE_CODE:Landroid/annotation/LewaHook$LewaHookType;
     .end annotation
 
     .prologue
@@ -5552,14 +5552,6 @@
 
     iput v3, v0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mSystemTop:I
 
-    invoke-static/range {p0 .. p0}, Lcom/android/internal/policy/impl/PhoneWindowManager$Injector;->adjustSystemTop(Lcom/android/internal/policy/impl/PhoneWindowManager;)I
-
-    move-result v3
-
-    move-object/from16 v0, p0
-
-    iput v3, v0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mSystemTop:I
-
     :cond_6
     return-void
 
@@ -5915,6 +5907,20 @@
     invoke-direct {p0}, Lcom/android/internal/policy/impl/PhoneWindowManager;->updateLockScreenTimeout()V
 
     return-void
+.end method
+
+.method callUpdateSystemUiVisibilityLw()I
+    .locals 1
+    .annotation build Landroid/annotation/LewaHook;
+        value = .enum Landroid/annotation/LewaHook$LewaHookType;->NEW_METHOD:Landroid/annotation/LewaHook$LewaHookType;
+    .end annotation
+
+    .prologue
+    invoke-direct {p0}, Lcom/android/internal/policy/impl/PhoneWindowManager;->updateSystemUiVisibilityLw()I
+
+    move-result v0
+
+    return v0
 .end method
 
 .method public canBeForceHidden(Landroid/view/WindowManagerPolicy$WindowState;Landroid/view/WindowManager$LayoutParams;)Z
@@ -7649,7 +7655,7 @@
     .line 3347
     :cond_2
     :goto_2
-    invoke-virtual {p0}, Lcom/android/internal/policy/impl/PhoneWindowManager;->updateSystemUiVisibilityLw()I
+    invoke-direct {p0}, Lcom/android/internal/policy/impl/PhoneWindowManager;->updateSystemUiVisibilityLw()I
 
     move-result v3
 
@@ -7815,7 +7821,7 @@
     iput-object p2, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mFocusedWindow:Landroid/view/WindowManagerPolicy$WindowState;
 
     .line 3369
-    invoke-virtual {p0}, Lcom/android/internal/policy/impl/PhoneWindowManager;->updateSystemUiVisibilityLw()I
+    invoke-direct {p0}, Lcom/android/internal/policy/impl/PhoneWindowManager;->updateSystemUiVisibilityLw()I
 
     move-result v0
 
